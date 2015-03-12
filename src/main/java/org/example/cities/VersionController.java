@@ -8,6 +8,6 @@ public class VersionController {
 
     @RequestMapping("/version")
     public String index() {
-        return "Greetings Columbus Cloud Platform Roadshow! - v1";
+        return "Greetings Columbus Cloud Platform Roadshow! - v2";
     }
 }
