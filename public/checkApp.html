@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Check App</title>
+<script type="text/javascript">
+	
+	function getVersion(){
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open("GET", "/version", false);
+		xmlHttp.send();
+		return xmlHttp.responseText;
+	}
+	
+	function addVersion(timeString){
+		var div = document.getElementById('checkapp'); 
+		div.innerHTML = div.innerHTML + getVersion() + ' - ' + timeString + '<br/>';
+		window.scrollTo(0,document.body.scrollHeight);
+		return;
+	}
+	
+	var continueChecking;
+	
+	function startCheck(){
+		continueChecking = setInterval(function (){ 
+			d = new Date(); 
+			addVersion(d.toLocaleTimeString())}, 1000);
+	}
+	
+	function stopCheck(){
+		clearInterval(continueChecking);
+	}
+	
+</script>
+</head>
+<body>
+	<div id="checkapp">
+		<input type="button"
+		onclick="startCheck()"
+		value="Start" /><br/>
+	</div>
+	<input type="button"
+		onclick="stopCheck()"
+		value="Stop" />
+	
+</body>
+</html>
