@@ -34,14 +34,18 @@
 </script>
 </head>
 <body>
+	<H1>Continuously Ping Version Endpoint</H1>
+	<button
+	onclick="startCheck()"
+	 >Start</button><br/>
 	<div id="checkapp">
-		<input type="button"
-		onclick="startCheck()"
-		value="Start" /><br/>
 	</div>
-	<input type="button"
+	<button
 		onclick="stopCheck()"
-		value="Stop" />
+		>Stop</button>
+		
+	<button onclick="document.getElementById('checkapp').innerHTML=''">Clear</button>
+
 	
 </body>
 </html>
